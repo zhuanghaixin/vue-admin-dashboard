@@ -4,12 +4,11 @@
     <router-link to="/about">About</router-link>
   </div>
 </template>
- 
+
 <script>
 export default {
   name: "Header"
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
