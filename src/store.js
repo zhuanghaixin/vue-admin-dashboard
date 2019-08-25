@@ -9,11 +9,14 @@ Vue.use(Vuex);
 if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
   window.localStorage.setItem("isDarkMode", "true")
 }
+
+
 const userSelectedDakMode =
   window.localStorage.getItem("isDarkMode") === "true";
 const state = {
   isDarkMode: userSelectedDakMode
 }
+
 
 // getters
 const getters = {
