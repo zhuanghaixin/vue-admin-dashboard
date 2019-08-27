@@ -32,6 +32,8 @@
 <script>
 import RequestAccount from "@/components/RequestAccount";
 import ThemeSwitch from "@/components/ThemeSwitch.vue";
+import * as netlifyIdentityWidget from "netlify-identity-widget";
+
 export default {
   name: "sigin",
   components: {
@@ -42,6 +44,9 @@ export default {
     isDarkMode() {
       return this.$store.getters.isDarkMode;
     }
+  },
+  mounted() {
+    netlifyIdentityWidget.open();
   }
 };
 </script>
