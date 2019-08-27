@@ -58,3 +58,19 @@ sans-serif;
   font-weight: bold;
   color: $colors;
 }
+
+%medium {
+  line-height: 31px;
+  font-size: 20px;
+}
+
+@mixin medium-text($color: $white) {
+  @extend %medium;
+  color: $color;
+}
+
+@mixin medium-text-bold($color: $white) {
+  @extend %medium;
+  font-weight: bold;
+  color: $color;
+}

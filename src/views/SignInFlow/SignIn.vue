@@ -1,25 +1,32 @@
 <template>
   <div class="container" :class="{'light-background':!isDarkMode,'dark-background':isDarkMode}">
+    <Notification v-if="hasText" :text="text" />
     <RequestAccount />
     <div class="login">
       <img src="@/assets/DCHQ.svg" v-show="isDarkMode" />
       <img src="@/assets/DCHQ-dark.svg" v-show="!isDarkMode" />
       <h4 :class="{'light-text':isDarkMode,'dark-text':!isDarkMode}">Sign into Design+Code HQ</h4>
-      <input
-        type="email"
-        name
-        id
-        placeholder="Email"
-        :class="{'light-field':isDarkMode,'dark-field':!isDarkMode}"
-      />
-      <input
-        type="password"
-        name
-        id
-        placeholder="Password"
-        :class="{'light-field':isDarkMode,'dark-field':!isDarkMode}"
-      />
-      <button>Sign in</button>
+      <form @submit.prevent="onSubmit">
+        <input
+          type="email"
+          name
+          id
+          placeholder="Email"
+          :class="{'light-field':isDarkMode,'dark-field':!isDarkMode}"
+          v-model="email"
+          required
+        />
+        <input
+          type="password"
+          name
+          id
+          placeholder="Password"
+          :class="{'light-field':isDarkMode,'dark-field':!isDarkMode}"
+          v-model="password"
+          required
+        />
+        <button>Sign in</button>
+      </form>
       <router-link
         to="/recover"
         :class="{'light-link':isDarkMode,'dark-link':!isDarkMode}"
@@ -32,21 +39,54 @@
 <script>
 import RequestAccount from "@/components/RequestAccount";
 import ThemeSwitch from "@/components/ThemeSwitch.vue";
-import * as netlifyIdentityWidget from "netlify-identity-widget";
+import Notification from "@/components/Notification.vue";
+// import * as netlifyIdentityWidget from "netlify-identity-widget";
+import { auth } from "@/main";
 
 export default {
   name: "sigin",
   components: {
     RequestAccount,
-    ThemeSwitch
+    ThemeSwitch,
+    Notification
+  },
+  data() {
+    return {
+      email: null,
+      password: null,
+      hasText: false,
+      text: ""
+    };
   },
   computed: {
     isDarkMode() {
       return this.$store.getters.isDarkMode;
     }
   },
+  // mounted() {
+  //   netlifyIdentityWidget.open();
+  // },
+  methods: {
+    onSubmit() {
+      const email = this.email;
+      const password = this.password;
+      console.log(email);
+      console.log(password);
+      auth
+        .login(email, password, true)
+        .then(response => {
+          console.log(JSON.stringify({ response }));
+          this.$router.replace("/");
+        })
+        .catch(error => console.log("Failed  ", JSON.stringify(error)));
+    }
+  },
   mounted() {
-    netlifyIdentityWidget.open();
+    const params = this.$route.params;
+    if (params.userLoggedOut) {
+      this.hasText = true;
+      this.text = "you have logged out!";
+    }
   }
 };
 </script>
@@ -56,7 +96,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-
   min-height: 100vh;
 }
 .login {

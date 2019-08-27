@@ -3,9 +3,16 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import * as netlifyIdentityWidget from "netlify-identity-widget";
+import GoTrue from "gotrue-js";
 Vue.config.productionTip = false;
 // initialize Netlify Identity
-netlifyIdentityWidget.init()
+netlifyIdentityWidget.init();
+
+// initialize GoTrue JS for Identity
+export const auth = new GoTrue({
+  APIUrl: "https://zhuanghaixin-vue-admin-dashboard.netlify.com/.netlify/identity",
+  setCookie: true
+});
 new Vue({
   router,
   store,
