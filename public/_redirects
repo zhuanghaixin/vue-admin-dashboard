@@ -1,2 +1,7 @@
 # Netlify setting for single-page application
 /*    /index.html  200
+
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect default Netlify subdomain to primary domain
+https://zhuanghaixin-vue-admin-dashboard.netlify.com/* https://vue-admin-dashboard.zhuanghaixin.cn/:splat 301!
