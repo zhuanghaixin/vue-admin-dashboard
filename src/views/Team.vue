@@ -82,6 +82,7 @@ export default {
 <style lang="scss" scoped>
 h2 {
   @include heading-2;
+  text-align: left;
 }
 h3 {
   @include heading-3;
