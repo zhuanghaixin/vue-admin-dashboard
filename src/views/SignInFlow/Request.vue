@@ -65,12 +65,13 @@ export default {
     //Slack API logic
     let slackURL=new URL("https://slack.com/api/chat.postMessage")
     const data={
-      token:'xoxp-740825984773-743004869782-740830766021-3c1489b38a5b1c5fc760a0ae02733cb7',
+      // token:'xoxp-740825984773-743004869782-729444109634-52eaa09ecb60b6fdee3479b4df8dc2d2',
       channel:'hq',
       text:`${email} has requested admin access to HQ.Please go to Netlify to invite them`,
     }
     slackURL.search=new URLSearchParams(data)
     console.log(slackURL)
+    fetch(slackURL)
     fetch(slackURL).then(()=>{
       this.$router.push({
         name:'SignIn',
