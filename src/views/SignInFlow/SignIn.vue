@@ -83,9 +83,17 @@ export default {
   },
   mounted() {
     const params = this.$route.params;
+    console.log(params.userRecoverAccount)
+    console.log(params.userRequestedAccount)
     if (params.userLoggedOut) {
       this.hasText = true;
       this.text = "you have logged out!";
+    }else if(params.userRecoverAccount){
+      this.hasText=true;
+      this.text=`you email has already been sent to ${params.email}`
+    }else if(params.userRequestedAccount){
+      this.hasText=true;
+      this.text=`you request has already been sent to an administrator for ${params.email}`
     }
   }
 };
