@@ -16,6 +16,8 @@ export default {
 <style lang="scss">
 * {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin: 0;
+  padding: 0;
 }
 body {
   background: $dark-blue;
@@ -33,16 +35,7 @@ p {
   text-align: center;
   color: $white;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: $white;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+
 h4 {
   margin: 0;
   font-family: SF Pro Display;
