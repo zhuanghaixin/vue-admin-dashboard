@@ -24,7 +24,7 @@ Vue.js+Vue-Router+Vuex+Sass
 ## 测试账号
 ```
 Email:649308293@qq.com
-Password:123456
+Password:123456789
 ```
 ## 项目截图(部分)
 - 登录
