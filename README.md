@@ -28,7 +28,7 @@ Password:123456
 ```
 ## 项目截图(部分)
 - 登录
-[]()
+![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin.png)
 - 注册
 - 忘记密码
 - 换肤
