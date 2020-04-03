@@ -3,7 +3,7 @@
 [在线体验地址](https://zhuanghaixin-vue-admin-dashboard.netlify.com/)
 ## 技术栈
 ```
-Vue.js+Vue-Router+Vuex+Sass
+Vue.js+Vue-Router+Vuex+Sass+Netlify
 ```
 
 ## 项目介绍
