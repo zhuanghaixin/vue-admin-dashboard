@@ -30,10 +30,15 @@ Password:123456
 - 登录
 ![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin.png)
 - 注册
+![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin_request.png)
 - 忘记密码
+![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin_recover_account.png)
 - 换肤
+![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin_dark.png)
 - 仪表盘状态
+![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin_team.png)
 - 图表
+![](https://github.com/zhuanghaixin/vue-admin-dashboard/blob/master/public/img/zhuanghaixin-vue-admin-dashboard.netlify.com_signin_admin.png)
 
 
 ## 项目启动
