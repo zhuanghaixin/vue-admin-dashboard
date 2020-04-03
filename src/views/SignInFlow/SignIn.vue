@@ -76,7 +76,9 @@ export default {
         .login(email, password, true)
         .then(response => {
           console.log(JSON.stringify({ response }));
-          this.$router.replace("/");
+          this.$router.replace("/").catch(err => {
+            console.log('all good')
+          })
         })
         .catch(error => console.log("Failed  ", JSON.stringify(error)));
     }
